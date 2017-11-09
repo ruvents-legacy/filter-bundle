@@ -1,0 +1,30 @@
+{
+    "name": "ruvents/symfony-filter-bundle",
+    "description": "RUVENTS Symfony filter Bundle",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Artem Diakov",
+            "email": "adiakov.work@gmail.com"
+        },
+        {
+            "name": "Valentin Udaltsov",
+            "email": "udaltsov@ruvents.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "php": "^7.1",
+        "symfony/form": "~3.4@beta",
+        "symfony/dependency-injection": "~3.4@beta",
+        "doctrine/orm": "^2.5",
+        "symfony/http-foundation": "^3.4",
+        "symfony/http-kernel": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ruvents\\FilterBundle\\": ""
+        }
+    }
+}
