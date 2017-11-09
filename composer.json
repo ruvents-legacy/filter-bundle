@@ -1,7 +1,7 @@
 {
-    "name": "ruvents/symfony-filter-bundle",
-    "description": "RUVENTS Symfony filter Bundle",
-    "type": "project",
+    "name": "ruvents/filter-bundle",
+    "description": "RUVENTS Filter Bundle",
+    "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
         {
