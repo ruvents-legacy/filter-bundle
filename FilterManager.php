@@ -4,6 +4,7 @@ namespace Ruvents\FilterBundle;
 
 use Doctrine\ORM\QueryBuilder;
 use Psr\Container\ContainerInterface;
+use Ruvents\FilterBundle\Type\FilterTypeInterface;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -54,7 +55,7 @@ class FilterManager
         $type->configureOptions($resolver);
         $options = $resolver->resolve($options);
 
-        $form = $type->buildForm($this->formFactory, $options)
+        $form = $type->createForm($this->formFactory, $options)
             ->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

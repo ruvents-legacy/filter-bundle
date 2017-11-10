@@ -3,7 +3,7 @@
 namespace Ruvents\FilterBundle\DependencyInjection\Compiler;
 
 use Ruvents\FilterBundle\FilterManager;
-use Ruvents\FilterBundle\FilterTypeInterface;
+use Ruvents\FilterBundle\Type\FilterTypeInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Compiler\ServiceLocatorTagPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
