@@ -40,10 +40,6 @@ class FilterManager
             throw new \LogicException();
         }
 
-        if (!class_implements($filterType, FilterTypeInterface::class)) {
-            throw new \InvalidArgumentException('$filterType must implements FilterTypeInterface');
-        }
-
         if (!$this->types->has($filterType)) {
             throw new \InvalidArgumentException();
         }
@@ -70,6 +66,6 @@ class FilterManager
             }
         }
 
-        return new FilterResult($form,$queryBuilder,$options);
+        return new FilterResult($form, $queryBuilder, $options);
     }
 }
