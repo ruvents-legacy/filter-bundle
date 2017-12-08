@@ -26,5 +26,8 @@
         "psr-4": {
             "Ruvents\\FilterBundle\\": ""
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4"
     }
 }
