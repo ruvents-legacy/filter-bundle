@@ -34,7 +34,7 @@ class FilterManager
         $this->requestStack = $requestStack;
     }
 
-    public function apply(string $filterType, QueryBuilder $queryBuilder, array $options = [])
+    public function apply(string $filterType, QueryBuilder $queryBuilder, array $options = []): FilterResult
     {
         if (null === $request = $this->requestStack->getCurrentRequest()) {
             throw new \LogicException();
