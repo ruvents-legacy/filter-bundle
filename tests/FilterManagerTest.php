@@ -73,8 +73,12 @@ class FilterManagerTest extends TestCase
     protected function setUp()
     {
         $this->container = new TestContainer();
-        $this->formFactory = (new FormFactory(new FormRegistry([new HttpFoundationExtension()], new ResolvedFormTypeFactory())));
+        $this->formFactory = (new FormFactory(
+            new FormRegistry([new HttpFoundationExtension()], new ResolvedFormTypeFactory())
+        ));
         $this->requestStack = new RequestStack();
-        $this->queryBuilder = new QueryBuilder($this->getMockBuilder(EntityManagerInterface::class)->getMock());
+        $this->queryBuilder = new QueryBuilder($this
+            ->getMockBuilder(EntityManagerInterface::class)
+            ->getMock());
     }
 }
