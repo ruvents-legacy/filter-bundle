@@ -2,7 +2,6 @@
 
 namespace Ruvents\FilterBundle\tests;
 
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use PHPUnit\Framework\TestCase;
@@ -26,8 +25,8 @@ class FilterManagerTest extends TestCase
     /** @var RequestStack */
     private $requestStack;
 
-    /** @var EntityManager */
-    private $entityManager;
+    /** @var QueryBuilder */
+    private $queryBuilder;
 
     /**
      * @expectedException \LogicException
@@ -37,10 +36,8 @@ class FilterManagerTest extends TestCase
         $serviceId = FilterTypeTest::class;
         $this->container->set($serviceId, new FilterTypeTest());
 
-        $qb = (new QueryBuilder($this->entityManager));
-
         (new FilterManager($this->container, $this->formFactory, $this->requestStack))
-            ->apply(FilterTypeTest::class, $qb);
+            ->apply(FilterTypeTest::class, $this->queryBuilder);
     }
 
     /**
@@ -48,12 +45,10 @@ class FilterManagerTest extends TestCase
      */
     public function testInvalidArgumentException()
     {
-        $qb = (new QueryBuilder($this->entityManager));
-
         $this->requestStack->push(new Request());
 
         (new FilterManager($this->container, $this->formFactory, $this->requestStack))
-            ->apply(FilterTypeTest::class, $qb);
+            ->apply(FilterTypeTest::class, $this->queryBuilder);
     }
 
     public function testApply()
@@ -61,19 +56,16 @@ class FilterManagerTest extends TestCase
         $serviceId = FilterTypeTest::class;
         $this->container->set($serviceId, new FilterTypeTest());
 
-        $requestStack = new RequestStack();
-        $requestStack->push(new Request());
+        $this->requestStack->push(new Request());
 
-        $qb = (new QueryBuilder($this->entityManager));
+        $filterManager = new FilterManager($this->container, $this->formFactory, $this->requestStack);
 
-        $filterManager = new FilterManager($this->container, $this->formFactory, $requestStack);
-
-        $filterResult = $filterManager->apply(FilterTypeTest::class, $qb, $options = []);
+        $filterResult = $filterManager->apply(FilterTypeTest::class, $this->queryBuilder, $options = []);
 
         $testForm = (new FilterTypeTest())->createForm($this->formFactory, []);
 
         $this->assertEquals($filterResult->getForm(), $testForm);
-        $this->assertEquals($filterResult->getQueryBuilder(), $qb);
+        $this->assertEquals($filterResult->getQueryBuilder(), $this->queryBuilder);
         $this->assertEquals($filterResult->getOptions(), $options);
         $this->assertEquals($filterResult->createView(), $testForm->createView());
     }
@@ -83,6 +75,6 @@ class FilterManagerTest extends TestCase
         $this->container = new TestContainer();
         $this->formFactory = (new FormFactory(new FormRegistry([new HttpFoundationExtension()], new ResolvedFormTypeFactory())));
         $this->requestStack = new RequestStack();
-        $this->entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
+        $this->queryBuilder = new QueryBuilder($this->getMockBuilder(EntityManagerInterface::class)->getMock());
     }
 }
