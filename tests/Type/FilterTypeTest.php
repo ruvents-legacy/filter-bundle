@@ -18,6 +18,7 @@ class FilterTypeTest implements FilterTypeInterface
         return $factory
             ->create()
             ->add('testMethod', TextType::class)
+            ->add('test', TextType::class)
             ->submit([
                 'testMethod' => self::TEST_VALUE,
             ]);
