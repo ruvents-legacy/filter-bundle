@@ -71,8 +71,10 @@ class FilterManagerTest extends TestCase
         $this->assertEquals($filterResult->createView(), $testForm->createView());
 
         $actualValue = $filterResult->getQueryBuilder()->getParameters()[0]->getValue();
-
         $this->assertEquals(FilterTypeTest::TEST_VALUE, $actualValue);
+
+        $expectedDql = 'SELECT WHERE a = :data';
+        $this->assertEquals($expectedDql, $this->queryBuilder->getDQL());
     }
 
     protected function setUp()
@@ -82,8 +84,6 @@ class FilterManagerTest extends TestCase
             new FormRegistry([new HttpFoundationExtension()], new ResolvedFormTypeFactory())
         ));
         $this->requestStack = new RequestStack();
-        $this->queryBuilder = new QueryBuilder($this
-            ->getMockBuilder(EntityManagerInterface::class)
-            ->getMock());
+        $this->queryBuilder = new MockQueryBuilder($this->createMock(EntityManagerInterface::class));
     }
 }
