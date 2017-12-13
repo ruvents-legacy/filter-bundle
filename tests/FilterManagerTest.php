@@ -7,7 +7,6 @@ use Doctrine\ORM\QueryBuilder;
 use PHPUnit\Framework\TestCase;
 use Ruvents\FilterBundle\FilterManager;
 use Ruvents\FilterBundle\tests\Type\FilterTypeTest;
-use Ruvents\FilterBundle\tests\Type\FilterTypeTestWithoutSubmitData;
 use Symfony\Component\Form\Extension\HttpFoundation\HttpFoundationExtension;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Form\FormRegistry;
