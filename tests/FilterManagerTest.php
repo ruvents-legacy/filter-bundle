@@ -84,6 +84,6 @@ class FilterManagerTest extends TestCase
             new FormRegistry([new HttpFoundationExtension()], new ResolvedFormTypeFactory())
         ));
         $this->requestStack = new RequestStack();
-        $this->queryBuilder = new MockQueryBuilder($this->createMock(EntityManagerInterface::class));
+        $this->queryBuilder = new QueryBuilder($this->createMock(EntityManagerInterface::class));
     }
 }
