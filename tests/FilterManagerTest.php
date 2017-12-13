@@ -69,12 +69,6 @@ class FilterManagerTest extends TestCase
         $this->assertEquals($filterResult->getQueryBuilder(), $this->queryBuilder);
         $this->assertEquals($filterResult->getOptions(), $options);
         $this->assertEquals($filterResult->createView(), $testForm->createView());
-
-        $actualValue = $filterResult->getQueryBuilder()->getParameters()[0]->getValue();
-        $this->assertEquals(FilterTypeTest::TEST_VALUE, $actualValue);
-
-        $expectedDql = 'SELECT WHERE a = :data';
-        $this->assertEquals($expectedDql, $this->queryBuilder->getDQL());
     }
 
     protected function setUp()
