@@ -62,13 +62,6 @@ class FilterManagerTest extends TestCase
 
         $filterResult = $filterManager->apply(FilterTypeTest::class, $this->queryBuilder, $options = []);
 
-        $testForm = (new FilterTypeTest())->createForm($this->formFactory, []);
-
-        $this->assertEquals($filterResult->getForm(), $testForm);
-        $this->assertEquals($filterResult->getQueryBuilder(), $this->queryBuilder);
-        $this->assertEquals($filterResult->getOptions(), $options);
-        $this->assertEquals($filterResult->createView(), $testForm->createView());
-
         $actualValue = $filterResult->getQueryBuilder()->getParameters()[0]->getValue();
         $this->assertEquals(FilterTypeTest::TEST_VALUE, $actualValue);
     }
