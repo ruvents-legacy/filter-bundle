@@ -1,6 +1,6 @@
 {
-    "name": "ruvents/filter-bundle",
-    "description": "RUVENTS Filter Bundle",
+    "name": "ruwork/filter-bundle",
+    "description": "Ruwork Filter Bundle",
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ruvents\\FilterBundle\\": ""
+            "Ruwork\\DoctrineFilterBundle\\": ""
         }
     },
     "require-dev": {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Ruvents\FilterBundle;
+namespace Ruwork\DoctrineFilterBundle;
 
 use Doctrine\ORM\QueryBuilder;
 use Psr\Container\ContainerInterface;
-use Ruvents\FilterBundle\Type\FilterTypeInterface;
+use Ruwork\DoctrineFilterBundle\Type\FilterTypeInterface;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\RequestStack;

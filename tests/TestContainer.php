@@ -1,5 +1,5 @@
 <?php
-namespace Ruvents\FilterBundle\tests;
+namespace Ruwork\DoctrineFilterBundle\tests;
 
 use Psr\Container\ContainerInterface;
 

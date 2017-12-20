@@ -1,6 +1,6 @@
 <?php
 
-namespace Ruvents\FilterBundle\Type;
+namespace Ruwork\DoctrineFilterBundle\Type;
 
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\FormInterface;

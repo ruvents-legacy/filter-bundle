@@ -1,6 +1,6 @@
 <?php
 
-namespace Ruvents\FilterBundle;
+namespace Ruwork\DoctrineFilterBundle;
 
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\Form\FormInterface;

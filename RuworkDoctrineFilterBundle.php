@@ -1,12 +1,12 @@
 <?php
 
-namespace Ruvents\FilterBundle;
+namespace Ruwork\DoctrineFilterBundle;
 
-use Ruvents\FilterBundle\DependencyInjection\Compiler\FilterPass;
+use Ruwork\DoctrineFilterBundle\DependencyInjection\Compiler\FilterPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class RuventsFilterBundle extends Bundle
+class RuworkDoctrineFilterBundle extends Bundle
 {
     /**
      * {@inheritdoc}

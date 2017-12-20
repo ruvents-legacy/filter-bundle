@@ -1,12 +1,12 @@
 <?php
 
-namespace Ruvents\FilterBundle\tests;
+namespace Ruwork\DoctrineFilterBundle\tests;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use PHPUnit\Framework\TestCase;
-use Ruvents\FilterBundle\FilterManager;
-use Ruvents\FilterBundle\tests\Type\FilterTypeTest;
+use Ruwork\DoctrineFilterBundle\FilterManager;
+use Ruwork\DoctrineFilterBundle\tests\Type\FilterTypeTest;
 use Symfony\Component\Form\Extension\HttpFoundation\HttpFoundationExtension;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Form\FormRegistry;

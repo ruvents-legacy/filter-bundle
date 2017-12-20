@@ -1,9 +1,9 @@
 <?php
 
-namespace Ruvents\FilterBundle\DependencyInjection\Compiler;
+namespace Ruwork\DoctrineFilterBundle\DependencyInjection\Compiler;
 
-use Ruvents\FilterBundle\FilterManager;
-use Ruvents\FilterBundle\Type\FilterTypeInterface;
+use Ruwork\DoctrineFilterBundle\FilterManager;
+use Ruwork\DoctrineFilterBundle\Type\FilterTypeInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Compiler\ServiceLocatorTagPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -20,7 +20,7 @@ class FilterPass implements CompilerPassInterface
             return;
         }
 
-        $filterTypes = $container->findTaggedServiceIds($tag = 'ruvents_filter_type', true);
+        $filterTypes = $container->findTaggedServiceIds($tag = 'ruwork_doctrine_filter_type', true);
 
         $filterTypeRefs = [];
 

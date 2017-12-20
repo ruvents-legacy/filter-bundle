@@ -1,9 +1,9 @@
 <?php
 
-namespace Ruvents\FilterBundle\tests\Type;
+namespace Ruwork\DoctrineFilterBundle\tests\Type;
 
 use Doctrine\ORM\QueryBuilder;
-use Ruvents\FilterBundle\Type\FilterTypeInterface;
+use Ruwork\DoctrineFilterBundle\Type\FilterTypeInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\FormInterface;

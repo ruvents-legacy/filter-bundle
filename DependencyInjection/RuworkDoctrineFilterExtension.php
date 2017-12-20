@@ -1,13 +1,13 @@
 <?php
 
-namespace Ruvents\FilterBundle\DependencyInjection;
+namespace Ruwork\DoctrineFilterBundle\DependencyInjection;
 
-use Ruvents\FilterBundle\FilterManager;
-use Ruvents\FilterBundle\Type\FilterTypeInterface;
+use Ruwork\DoctrineFilterBundle\FilterManager;
+use Ruwork\DoctrineFilterBundle\Type\FilterTypeInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 
-class RuventsFilterExtension extends Extension
+class RuworkDoctrineFilterExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -19,6 +19,6 @@ class RuventsFilterExtension extends Extension
 
         $container->registerForAutoconfiguration(FilterTypeInterface::class)
             ->setPublic(false)
-            ->addTag('ruvents_filter_type');
+            ->addTag('ruwork_doctrine_filter_type');
     }
 }
