@@ -12,8 +12,8 @@
     </php>
 
     <testsuites>
-        <testsuite name="Ruwork GetLogo Test Suite">
-            <directory>./tests</directory>
+        <testsuite name="Ruwork Doctrine Filter Bundle Test Suite">
+            <directory>./Tests</directory>
         </testsuite>
     </testsuites>
 
@@ -21,7 +21,7 @@
         <whitelist>
             <directory>./</directory>
             <exclude>
-                <directory>./tests</directory>
+                <directory>./Tests</directory>
                 <directory>./vendor</directory>
             </exclude>
         </whitelist>

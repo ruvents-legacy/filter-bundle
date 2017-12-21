@@ -1,12 +1,13 @@
 <?php
 
-namespace Ruwork\DoctrineFilterBundle\tests;
+namespace Ruwork\DoctrineFilterBundle\Tests;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use PHPUnit\Framework\TestCase;
 use Ruwork\DoctrineFilterBundle\FilterManager;
-use Ruwork\DoctrineFilterBundle\tests\Type\FilterTypeTest;
+use Ruwork\DoctrineFilterBundle\Tests\Fixtures\FilterTypes\FilterTypeTest;
+use Ruwork\DoctrineFilterBundle\Tests\Fixtures\PsrContainer;
 use Symfony\Component\Form\Extension\HttpFoundation\HttpFoundationExtension;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Form\FormRegistry;
@@ -16,7 +17,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 class FilterManagerTest extends TestCase
 {
-    /** @var TestContainer */
+    /** @var PsrContainer */
     private $container;
 
     /** @var FormFactory */
@@ -68,7 +69,7 @@ class FilterManagerTest extends TestCase
 
     protected function setUp()
     {
-        $this->container = new TestContainer();
+        $this->container = new PsrContainer();
         $this->formFactory = (new FormFactory(
             new FormRegistry([new HttpFoundationExtension()], new ResolvedFormTypeFactory())
         ));

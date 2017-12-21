@@ -1,6 +1,6 @@
 <?php
 
-namespace Ruwork\DoctrineFilterBundle\tests\Type;
+namespace Ruwork\DoctrineFilterBundle\Tests\Fixtures\FilterTypes;
 
 use Doctrine\ORM\QueryBuilder;
 use Ruwork\DoctrineFilterBundle\Type\FilterTypeInterface;
